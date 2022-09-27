@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - '27012:27017'
+
+  mongo-express: 
+    container_name: api
+    image: api
+    ports: 
+    - '3000:3000'
+
+  front-end: 
+    container_name: ang
+    image: ang
+    ports: 
+    - '80:80'
